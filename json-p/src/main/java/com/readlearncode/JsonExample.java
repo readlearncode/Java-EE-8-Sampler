@@ -15,7 +15,7 @@ import java.io.InputStream;
 public class JsonExample {
 
     public static JsonObject loadJsonObject() {
-        try (InputStream is = JsonPointerSimple.class.getResourceAsStream("/jsondata-object.json");
+        try (InputStream is = JsonPointerExample.class.getResourceAsStream("/jsondata-object.json");
              JsonReader jsonReader = Json.createReader(is)) {
             return jsonReader.readObject();
         } catch (IOException e) {

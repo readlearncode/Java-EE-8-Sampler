@@ -15,7 +15,7 @@ import static org.assertj.core.api.Java6Assertions.assertThat;
 public class JsonPatchExampleTest {
 
     @Test
-    public void ifValueIsMoved_shouldNotAmendOriginalJSON(){
+    public void ifValueIsMoved_shouldNotAmendOriginalJSON() {
         JsonPatchExample jsonPatchExample = new JsonPatchExample();
         JsonObject jsonObject = jsonPatchExample.toJsonArray();
 
@@ -23,7 +23,6 @@ public class JsonPatchExampleTest {
         JsonString jsonString = (JsonString) pointer.getValue(jsonObject);
         assertThat(jsonString.getString()).isEqualToIgnoringCase("Cognitive");
     }
-
 
     @Test
     public void ifValueExists_moveItToDestination() {
@@ -34,7 +33,6 @@ public class JsonPatchExampleTest {
         JsonString jsonString = (JsonString) pointer.getValue(jsonObject);
         assertThat(jsonString.getString()).isEqualToIgnoringCase("Data");
     }
-
 
     @Test
     public void givenPath_copyToTargetPath() throws Exception {
@@ -58,7 +56,6 @@ public class JsonPatchExampleTest {
 
     @Test
     public void givenPatchPath_shouldRemoveAndAdd() {
-
         JsonPatchExample jsonPatchExample = new JsonPatchExample();
         JsonObject jsonObject = jsonPatchExample.addAndRemove();
 
@@ -73,7 +70,6 @@ public class JsonPatchExampleTest {
         pointer = Json.createPointer("/notes");
         boolean contains = pointer.containsValue(jsonObject);
         assertThat(contains).isFalse();
-
     }
 
     @Test

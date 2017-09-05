@@ -10,7 +10,7 @@ import java.io.InputStream;
  * @author Alex Theedom www.readlearncode.com
  * @version 1.0
  */
-public class JsonPointerSimple {
+public class JsonPointerExample {
 
     private JsonObject jsonObject = loadJsonObject();
 
@@ -35,7 +35,7 @@ public class JsonPointerSimple {
     }
 
     private static JsonObject loadJsonObject() {
-        try (InputStream is = JsonPointerSimple.class.getResourceAsStream("/jsondata-object.json");
+        try (InputStream is = JsonPointerExample.class.getResourceAsStream("/jsondata-object.json");
              JsonReader jsonReader = Json.createReader(is)) {
             return jsonReader.readObject();
         } catch (IOException e){

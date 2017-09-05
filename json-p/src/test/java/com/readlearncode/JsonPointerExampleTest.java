@@ -10,26 +10,26 @@ import static org.assertj.core.api.Java6Assertions.assertThat;
  * @author Alex Theedom www.readlearncode.com
  * @version 1.0
  */
-public class JsonPointerSimpleTest {
+public class JsonPointerExampleTest {
 
     @Test
     public void givenPointerToTopic_shouldReturnTopic() {
-        JsonPointerSimple jsonPointerSimple = new JsonPointerSimple();
-        String topic = jsonPointerSimple.find();
+        JsonPointerExample jsonPointerExample = new JsonPointerExample();
+        String topic = jsonPointerExample.find();
         assertThat(topic).isEqualToIgnoringCase("Cloud");
     }
 
     @Test
     public void givenPointerToTopic_shouldReplaceTopic() {
-        JsonPointerSimple jsonPointerSimple = new JsonPointerSimple();
-        String topic = jsonPointerSimple.replace();
+        JsonPointerExample jsonPointerExample = new JsonPointerExample();
+        String topic = jsonPointerExample.replace();
         assertThat(topic).isEqualToIgnoringCase("Big Data");
     }
 
     @Test
     public void givenPointerToArrayElement_shouldInsertTopicInToList() {
-        JsonPointerSimple jsonPointerSimple = new JsonPointerSimple();
-        String topic = jsonPointerSimple.add();
+        JsonPointerExample jsonPointerExample = new JsonPointerExample();
+        String topic = jsonPointerExample.add();
         assertThat(topic).isEqualToIgnoringCase("Java EE");
     }
 }
