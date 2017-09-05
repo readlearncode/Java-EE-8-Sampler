@@ -1,1 +1,19 @@
-[{"name":"Duke","gender":"M","phones":{"home":"555-123-456","mobile":"555-321-456"}},{"name":"Jane","gender":"F","phones":{"mobile":"555-999-111"}}]
+{
+  "name": "IBM developerWorks",
+  "URL": "https://www.ibm.com/developerworks/",
+  "topics": [
+    "Cognitive",
+    "Cloud",
+    "Data",
+    "IoT",
+    "Java"
+  ],
+  "series": [
+    "Sample Code...",
+    "5 things you didn't know...",
+    "Introduction to..."
+  ],
+  "notes": null,
+  "live": true,
+  "visitors": 100000000
+}

@@ -31,6 +31,13 @@ public class JsonPointerSimple {
         return jsonValue.getString();
     }
 
+    public String add(){
+        JsonPointer pointer = Json.createPointer("/topics/0");
+        JsonObject newJsonObject = pointer.add(jsonObject,Json.createValue("Java EE"));
+        JsonString jsonValue = (JsonString) pointer.getValue(newJsonObject);
+        return jsonValue.getString();
+    }
+
     private static JsonObject loadJsonObject() throws IOException {
 
         try (InputStream is = JsonPointerSimple.class.getResourceAsStream("/jsondata-object.json");

@@ -17,14 +17,21 @@ public class JsonPointerSimpleTest {
     @Test
     public void givenPointerToTopic_shouldReturnTopic() throws IOException {
         JsonPointerSimple jsonPointerSimple = new JsonPointerSimple();
-        String name = jsonPointerSimple.find();
-        assertThat(name).isEqualToIgnoringCase("Cloud");
+        String topic = jsonPointerSimple.find();
+        assertThat(topic).isEqualToIgnoringCase("Cloud");
     }
 
     @Test
     public void givenPointerToTopic_shouldReplaceTopic() throws IOException {
         JsonPointerSimple jsonPointerSimple = new JsonPointerSimple();
-        String name = jsonPointerSimple.replace();
-        assertThat(name).isEqualToIgnoringCase("Big Data");
+        String topic = jsonPointerSimple.replace();
+        assertThat(topic).isEqualToIgnoringCase("Big Data");
+    }
+
+    @Test
+    public void givenPointerToArrayElement_shouldInsertTopicInToList() throws IOException {
+        JsonPointerSimple jsonPointerSimple = new JsonPointerSimple();
+        String topic = jsonPointerSimple.add();
+        assertThat(topic).isEqualToIgnoringCase("Java EE");
     }
 }
