@@ -14,11 +14,7 @@ public class JsonPointerSimple {
 
     private JsonObject jsonObject = loadJsonObject();
 
-
-    public JsonPointerSimple() throws IOException {
-    }
-
-    public String find() throws IOException {
+    public String find() {
         JsonPointer pointer = Json.createPointer("/topics/1");
         JsonString jsonValue = (JsonString) pointer.getValue(jsonObject);
         return jsonValue.getString();
@@ -38,12 +34,12 @@ public class JsonPointerSimple {
         return jsonValue.getString();
     }
 
-    private static JsonObject loadJsonObject() throws IOException {
-
+    private static JsonObject loadJsonObject() {
         try (InputStream is = JsonPointerSimple.class.getResourceAsStream("/jsondata-object.json");
              JsonReader jsonReader = Json.createReader(is)) {
             return jsonReader.readObject();
+        } catch (IOException e){
+            return null;
         }
-
     }
 }
