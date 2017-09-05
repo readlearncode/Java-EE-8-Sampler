@@ -16,10 +16,10 @@ import static org.assertj.core.api.Java6Assertions.assertThat;
 public class JsonMergeDiffExampleTest {
 
     @Test
-    public void givenSourceAndTarget_shouldCreateMergePatch(){
+    public void givenSourceAndTarget_shouldCreateMergePatch() {
         JsonMergeDiffExample jsonMergeDiffExample = new JsonMergeDiffExample();
         JsonMergePatch mergePatch = jsonMergeDiffExample.createMergePatch();
-        JsonString jsonString = (JsonString)mergePatch.toJsonValue();
+        JsonString jsonString = (JsonString) mergePatch.toJsonValue();
 
         assertThat(jsonString.getString()).isEqualToIgnoringCase("{\"colour\":\"red\"}");
     }
