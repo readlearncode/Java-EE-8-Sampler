@@ -14,16 +14,17 @@ import static org.assertj.core.api.Java6Assertions.assertThat;
  */
 public class JsonPointerSimpleTest {
 
-
     @Test
-    public void givenPointerToName_shouldReturnName() throws IOException {
-
-
+    public void givenPointerToTopic_shouldReturnTopic() throws IOException {
         JsonPointerSimple jsonPointerSimple = new JsonPointerSimple();
-        String name = jsonPointerSimple.findName();
-        assertThat(name).isEqualToIgnoringCase("duke");
-
-
+        String name = jsonPointerSimple.find();
+        assertThat(name).isEqualToIgnoringCase("Cloud");
     }
 
+    @Test
+    public void givenPointerToTopic_shouldReplaceTopic() throws IOException {
+        JsonPointerSimple jsonPointerSimple = new JsonPointerSimple();
+        String name = jsonPointerSimple.replace();
+        assertThat(name).isEqualToIgnoringCase("Big Data");
+    }
 }

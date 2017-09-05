@@ -10,8 +10,8 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>jsonb</module>
-        <module>jsonp</module>
+        <module>json-b</module>
+        <module>json-p</module>
     </modules>
 
     <properties>

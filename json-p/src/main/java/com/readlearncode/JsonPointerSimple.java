@@ -1,7 +1,5 @@
 package com.readlearncode;
 
-import org.glassfish.json.JsonPointerImpl;
-
 import javax.json.*;
 import java.io.IOException;
 import java.io.InputStream;
@@ -12,21 +10,32 @@ import java.io.InputStream;
  * @author Alex Theedom www.readlearncode.com
  * @version 1.0
  */
-public class JsonPointerSimple{
+public class JsonPointerSimple {
 
-    public String findName() throws IOException {
+    private JsonObject jsonObject = loadJsonObject();
 
-        JsonPointer pointer = new JsonPointerImpl("/0/name");
-        JsonValue jsonValue = pointer.getValue(loadJsonObject());
-        return jsonValue.toString();
 
+    public JsonPointerSimple() throws IOException {
     }
 
-    private static JsonStructure loadJsonObject() throws IOException {
+    public String find() throws IOException {
+        JsonPointer pointer = Json.createPointer("/topics/1");
+        JsonString jsonValue = (JsonString) pointer.getValue(jsonObject);
+        return jsonValue.getString();
+    }
+
+    public String replace() {
+        JsonPointer pointer = Json.createPointer("/topics/1");
+        JsonObject newJsonObject = pointer.replace(jsonObject, Json.createValue("Big Data"));
+        JsonString jsonValue = (JsonString) pointer.getValue(newJsonObject);
+        return jsonValue.getString();
+    }
+
+    private static JsonObject loadJsonObject() throws IOException {
 
         try (InputStream is = JsonPointerSimple.class.getResourceAsStream("/jsondata-object.json");
              JsonReader jsonReader = Json.createReader(is)) {
-            return jsonReader.readArray();
+            return jsonReader.readObject();
         }
 
     }
