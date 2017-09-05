@@ -53,4 +53,10 @@ public class JsonPatchExample extends JsonExample {
         return jsonPatch.apply(jsonObject);
     }
 
+    public JsonObject toJsonArray() {
+        JsonPatchBuilder builder = Json.createPatchBuilder();
+        JsonArray jsonArray = builder.copy("/series/0", "/topics/0").build().toJsonArray(); // destination, source
+        return Json.createPatchBuilder(jsonArray).build().apply(jsonObject);
+    }
+
 }

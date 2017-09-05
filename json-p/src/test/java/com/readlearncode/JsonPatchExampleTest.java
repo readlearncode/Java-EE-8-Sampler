@@ -15,6 +15,17 @@ import static org.assertj.core.api.Java6Assertions.assertThat;
 public class JsonPatchExampleTest {
 
     @Test
+    public void ifValueIsMoved_shouldNotAmendOriginalJSON(){
+        JsonPatchExample jsonPatchExample = new JsonPatchExample();
+        JsonObject jsonObject = jsonPatchExample.toJsonArray();
+
+        JsonPointer pointer = Json.createPointer("/series/0");
+        JsonString jsonString = (JsonString) pointer.getValue(jsonObject);
+        assertThat(jsonString.getString()).isEqualToIgnoringCase("Cognitive");
+    }
+
+
+    @Test
     public void ifValueExists_moveItToDestination() {
         JsonPatchExample jsonPatchExample = new JsonPatchExample();
         JsonObject jsonObject = jsonPatchExample.test();
