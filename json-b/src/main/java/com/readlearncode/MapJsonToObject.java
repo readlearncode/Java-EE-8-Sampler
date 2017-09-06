@@ -50,5 +50,16 @@ public class MapJsonToObject extends JsonExample {
         return JsonbBuilder.create().toJson(magazine);
     }
 
+    public String bookAdapterToJson(){
+        JsonbConfig jsonbConfig = new JsonbConfig().withAdapters(new BookAdapter());
+        Jsonb jsonb = JsonbBuilder.create(jsonbConfig);
+        return jsonb.toJson(book1);
+    }
 
+    public Book bookAdapterToBook(){
+        JsonbConfig jsonbConfig = new JsonbConfig().withAdapters(new BookAdapter());
+        Jsonb jsonb = JsonbBuilder.create(jsonbConfig);
+        String json = "{\"isbn\":\"1234567890\",\"bookTitle\":\"Professional Java EE Design Patterns\",\"firstName\":\"Alex\",\"lastName\":\"Theedom\"}";
+        return jsonb.fromJson(json, Book.class);
+    }
 }

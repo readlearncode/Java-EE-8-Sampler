@@ -85,4 +85,19 @@ public class MapJsonToObjectTest extends JsonExample {
 
         assertThat(result).isEqualToIgnoringCase(expectedMagazine);
     }
+
+    @Test
+    public void givenAdapter_shouldSerialiseJSON() {
+        MapJsonToObject mapJsonToObject = new MapJsonToObject();
+        String result = mapJsonToObject.bookAdapterToJson();
+        String json = "{\"isbn\":\"1234567890\",\"bookTitle\":\"Professional Java EE Design Patterns\",\"firstName\":\"Alex\",\"lastName\":\"Theedom\"}";
+        assertThat(result).isEqualToIgnoringCase(json);
+    }
+
+    @Test
+    public void givenAdapter_shouldDeserialiseJson() {
+        MapJsonToObject mapJsonToObject = new MapJsonToObject();
+        Book book = mapJsonToObject.bookAdapterToBook();
+        assertThat(book).isEqualTo(bookAdapted);
+    }
 }

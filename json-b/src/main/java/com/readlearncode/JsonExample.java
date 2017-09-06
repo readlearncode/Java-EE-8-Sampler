@@ -36,6 +36,7 @@ public class JsonExample {
 
     public Book book1 = new Book();
     public Book book2 = new Book();
+    public Book bookAdapted = new Book();
 
     public List<Book> books = new ArrayList<>();
 
@@ -76,6 +77,12 @@ public class JsonExample {
 
         books.add(book1);
         books.add(book2);
+
+
+        bookAdapted.setId("1234567890");
+        bookAdapted.setTitle("Professional Java EE Design Patterns");
+        bookAdapted.setAuthor(alex);
+
 
         magazine.setId("1029384756Y");
         magazine.setAuthor(alex);
