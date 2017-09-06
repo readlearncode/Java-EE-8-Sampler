@@ -3,7 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>json-b</artifactId>
+    <artifactId>jax-rs-2.1</artifactId>
     <packaging>war</packaging>
 
     <parent>
@@ -12,41 +12,15 @@
         <version>1.0</version>
     </parent>
 
-    <name>json-binding</name>
-
-    <repositories>
-        <repository>
-            <id>java.net-Public</id>
-            <name>Maven Java Net Snapshots and Releases</name>
-            <url>https://maven.java.net/content/groups/public/</url>
-        </repository>
-    </repositories>
+    <name>jax-rs-2.1</name>
 
     <dependencies>
-
-        <dependency>
-            <groupId>javax.json</groupId>
-            <artifactId>javax.json-api</artifactId>
-            <version>1.1</version>
-        </dependency>
-
-        <dependency>
-            <groupId>javax.json.bind</groupId>
-            <artifactId>javax.json.bind-api</artifactId>
-            <version>1.0.0-RC2</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.eclipse</groupId>
-            <artifactId>yasson</artifactId>
-            <version>1.0.0-RC2</version>
-        </dependency>
 
         <dependency>
             <groupId>org.glassfish</groupId>
             <artifactId>javax.json</artifactId>
             <version>1.1</version>
-            <scope>runtime</scope>
+            <scope>provided</scope>
         </dependency>
 
         <!-- Test Dependencies -->
@@ -67,7 +41,7 @@
     </dependencies>
 
     <build>
-        <finalName>json-processing-1-1</finalName>
+        <finalName>jax-rs-2-1</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -80,5 +54,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
