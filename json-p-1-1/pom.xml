@@ -8,7 +8,7 @@
 
     <parent>
         <groupId>com.readlearncode</groupId>
-        <artifactId>java-ee-8-sampler</artifactId>
+        <artifactId>Java-EE-8-Sampler</artifactId>
         <version>1.0</version>
     </parent>
 
