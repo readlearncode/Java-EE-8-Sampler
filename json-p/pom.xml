@@ -41,7 +41,7 @@
     </dependencies>
 
     <build>
-        <finalName>json-processing-1-1</finalName>
+        <finalName>json-binding-1-0</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
