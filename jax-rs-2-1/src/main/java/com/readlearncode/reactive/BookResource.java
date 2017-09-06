@@ -1,4 +1,4 @@
-package com.readlearncode;
+package com.readlearncode.reactive;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
@@ -26,14 +26,6 @@ public class BookResource {
         GenericEntity<List<Book>> list = new GenericEntity<List<Book>>(books) {
         };
         return Response.ok(list).build();
-    }
-
-    @POST
-    @Consumes({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response saveBook(Book book) {
-        book = bookRepository.saveBook(book);
-        return Response.ok(book).build();
     }
 
 }
