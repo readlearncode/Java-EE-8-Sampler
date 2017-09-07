@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>Java-EE-8-Sampler</artifactId>
+        <groupId>com.readlearncode</groupId>
+        <version>1.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>CDI-2-0</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>javax.enterprise</groupId>
+            <artifactId>cdi-api</artifactId>
+            <version>2.0-PFD</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.ejb</groupId>
+            <artifactId>javax.ejb-api</artifactId>
+            <version>3.2</version>
+        </dependency>
+
+        <!-- Test Dependencies -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <finalName>jax-rs-2-1</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.6.0</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.1.0</version>
+            </plugin>
+
+            <!--<plugin>-->
+            <!--<groupId>org.codehaus.cargo</groupId>-->
+            <!--<artifactId>cargo-maven2-plugin</artifactId>-->
+            <!--<version>1.6.4</version>-->
+
+            <!--<executions>-->
+            <!--<execution>-->
+            <!--<phase>package</phase>-->
+            <!--<goals>-->
+            <!--<goal>run</goal>-->
+            <!--</goals>-->
+            <!--</execution>-->
+            <!--</executions>-->
+
+            <!--<configuration>-->
+
+            <!--<container>-->
+            <!--<containerId>glassfish</containerId>-->
+            <!--<zipUrlInstaller>-->
+            <!--<url>http://download.oracle.com/glassfish/5.0/promoted/latest-glassfish.zip</url>-->
+            <!--</zipUrlInstaller>-->
+            <!--</container>-->
+
+            <!--<deployables>-->
+            <!--<deployable>-->
+            <!--<groupId>${project.groupId}</groupId>-->
+            <!--<artifactId>${project.artifactId}</artifactId>-->
+            <!--<type>war</type>-->
+            <!--<properties>-->
+            <!--<context>/rest-server</context>-->
+            <!--</properties>-->
+            <!--</deployable>-->
+            <!--</deployables>-->
+
+            <!--</configuration>-->
+            <!--</plugin>-->
+        </plugins>
+    </build>
+
+</project>
