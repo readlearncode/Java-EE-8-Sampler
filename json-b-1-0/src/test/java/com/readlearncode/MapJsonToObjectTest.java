@@ -17,6 +17,7 @@ import static org.assertj.core.api.Java6Assertions.assertThat;
  */
 public class MapJsonToObjectTest extends JsonExample {
 
+
     @Test
     public void givenJSON_shouldDeserializeBook() {
         MapJsonToObject mapJsonToObject = new MapJsonToObject();
@@ -67,7 +68,7 @@ public class MapJsonToObjectTest extends JsonExample {
     }
 
     @Test
-    public void givenCustomisation_shouldProduceJSON() {
+    public void givenCustomisationOnProperties_shouldProduceJSON() {
         MapJsonToObject mapJsonToObject = new MapJsonToObject();
         String result = mapJsonToObject.customizedMapping();
 
@@ -96,9 +97,28 @@ public class MapJsonToObjectTest extends JsonExample {
     }
 
     @Test
+    public void givenCustomisationOnMethods_shouldProduceJSON() {
+        MapJsonToObject mapJsonToObject = new MapJsonToObject();
+        String result = mapJsonToObject.annotationMethodMapping();
+
+        assertThat(result).isEqualToIgnoringCase(customisedJsonNewspaper);
+
+        /*
+            {
+              "writer": {
+                "firstName": "Alex",
+                "lastName": "Theedom"
+              },
+              "price": "1.00",
+              "title": "Java Today"
+            }
+         */
+    }
+
+    @Test
     public void givenAnnotationPojo_shouldProduceJson() {
         MapJsonToObject mapJsonToObject = new MapJsonToObject();
-        String result = mapJsonToObject.annotationMapping();
+        String result = mapJsonToObject.annotationPropertiesMapping();
 
         assertThat(result).isEqualToIgnoringCase(expectedMagazine);
     }

@@ -1,9 +1,6 @@
 package com.readlearncode;
 
-import com.readlearncode.domain.Author;
-import com.readlearncode.domain.Binding;
-import com.readlearncode.domain.Book;
-import com.readlearncode.domain.Magazine;
+import com.readlearncode.domain.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,6 +35,7 @@ public class JsonExample {
             "    \"title\": \"Professional Java EE Design Patterns\"\n" +
             "}";
     public String expectedMagazine = "{\"pages\":300,\"languages\":[\"English\",\"Polish\",\"Russian\",\"Chinese\"],\"writer\":{\"firstName\":\"Alex\",\"lastName\":\"Theedom\"},\"price\":\"12.00\",\"binding\":null,\"id\":\"1029384756Y\",\"title\":\"Java Today\"}";
+    public String customisedJsonNewspaper = "{\"writer\":{\"firstName\":\"Alex\",\"lastName\":\"Theedom\"},\"price\":\"1.00\",\"title\":\"Java Today\"}";
 
     public Book book1 = new Book();
     public Book book2 = new Book();
@@ -48,6 +46,8 @@ public class JsonExample {
     public Book[] arrayBooks = {book1, book2};
 
     public Magazine magazine = new Magazine();
+
+    public Newspaper newspaper = new Newspaper();
 
     public JsonExample() {
         Author alex = new Author("Alex", "Theedom");
@@ -104,6 +104,11 @@ public class JsonExample {
             add("Russian");
             add("Chinese");
         }});
+
+        newspaper.setAuthor(alex);
+        newspaper.setTitle("Java Today");
+        newspaper.setInPrint(true);
+        newspaper.setPrice(1.00F);
 
     }
 

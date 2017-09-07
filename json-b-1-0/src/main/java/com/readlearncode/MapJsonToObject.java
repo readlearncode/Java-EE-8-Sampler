@@ -56,8 +56,12 @@ public class MapJsonToObject extends JsonExample {
         return jsonb.toJson(book1);
     }
 
-    public String annotationMapping(){
+    public String annotationPropertiesMapping(){
         return JsonbBuilder.create().toJson(magazine);
+    }
+
+    public String annotationMethodMapping(){
+        return JsonbBuilder.create().toJson(newspaper);
     }
 
     public String bookAdapterToJson(){
