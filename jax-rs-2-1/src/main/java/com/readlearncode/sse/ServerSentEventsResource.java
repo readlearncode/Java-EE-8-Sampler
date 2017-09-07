@@ -1,14 +1,13 @@
 package com.readlearncode.sse;
 
-import javax.inject.Singleton;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.sse.Sse;
 import javax.ws.rs.sse.SseEventSink;
 import java.io.IOException;
-import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
 
 /**
  * Source code github.com/readlearncode
@@ -17,13 +16,12 @@ import java.util.concurrent.Executors;
  * @version 1.0
  */
 @Path("server-sent-events")
-@Singleton
 public class ServerSentEventsResource {
 
     private final Object outputLock = new Object();
     private volatile SseEventSink eventSink;
 
-    private ExecutorService executorService =  Executors.newSingleThreadExecutor();
+    private ScheduledExecutorService executorService = Executors.newScheduledThreadPool(10);
 
     @Context
     private Sse sse;

@@ -20,7 +20,12 @@
     </properties>
 
     <dependencies>
-
+        <!--<dependency>-->
+            <!--<groupId>org.glassfish</groupId>-->
+            <!--<artifactId>javax.ejb</artifactId>-->
+            <!--<version>3.2-b06</version>-->
+            <!--&lt;!&ndash;<scope>provided</scope>&ndash;&gt;-->
+        <!--</dependency>-->
         <dependency>
             <groupId>org.glassfish</groupId>
             <artifactId>javax.enterprise.concurrent</artifactId>
