@@ -15,29 +15,29 @@ import static org.assertj.core.api.Java6Assertions.assertThat;
  * @author Alex Theedom www.readlearncode.com
  * @version 1.0
  */
-public class MapJsonToObjectTest extends JsonExample {
+public class JsonBindingExampleTest extends JsonExample {
 
 
     @Test
     public void givenJSON_shouldDeserializeBook() {
-        MapJsonToObject mapJsonToObject = new MapJsonToObject();
-        Book book = mapJsonToObject.deserializeBook();
+        JsonBindingExample jsonBindingExample = new JsonBindingExample();
+        Book book = jsonBindingExample.deserializeBook();
 
         assertThat(book).isEqualTo(book1);
     }
 
     @Test
     public void givenBookObject_shouldSerializeToJSONString() {
-        MapJsonToObject mapJsonToObject = new MapJsonToObject();
-        String json = mapJsonToObject.serializeBook();
+        JsonBindingExample jsonBindingExample = new JsonBindingExample();
+        String json = jsonBindingExample.serializeBook();
 
         assertThat(json).isEqualToIgnoringCase(bookJson);
     }
 
     @Test
     public void givenListOfBooks_shouldSerialiseToJson() {
-        MapJsonToObject mapJsonToObject = new MapJsonToObject();
-        String json = mapJsonToObject.serializeListOfBooks();
+        JsonBindingExample jsonBindingExample = new JsonBindingExample();
+        String json = jsonBindingExample.serializeListOfBooks();
 
         assertThat(json).isEqualToIgnoringCase(bookListJson);
     }
@@ -45,32 +45,32 @@ public class MapJsonToObjectTest extends JsonExample {
     @Test
     @Ignore // Does not work as per Docs http://json-b.net/getting-started.html
     public void givenJSON_deserializeToListOfBooks() {
-        MapJsonToObject mapJsonToObject = new MapJsonToObject();
-        List<Book> actualBooks = mapJsonToObject.deserializeListOfBooks();
+        JsonBindingExample jsonBindingExample = new JsonBindingExample();
+        List<Book> actualBooks = jsonBindingExample.deserializeListOfBooks();
 
         assertThat(actualBooks).isEqualTo(books);
     }
 
     @Test
     public void givenArrayOfBooks_shouldSerialiseToJson() {
-        MapJsonToObject mapJsonToObject = new MapJsonToObject();
-        String json = mapJsonToObject.serializeArrayOfBooks();
+        JsonBindingExample jsonBindingExample = new JsonBindingExample();
+        String json = jsonBindingExample.serializeArrayOfBooks();
 
         assertThat(json).isEqualToIgnoringCase(bookListJson);
     }
 
     @Test
     public void givenArrayOfStrings_shouldSerialiseToJson() {
-        MapJsonToObject mapJsonToObject = new MapJsonToObject();
-        String json = mapJsonToObject.serializeArrayOfStrings();
+        JsonBindingExample jsonBindingExample = new JsonBindingExample();
+        String json = jsonBindingExample.serializeArrayOfStrings();
 
         assertThat(json).isEqualToIgnoringCase("[\"Java EE\",\"Java SE\"]");
     }
 
     @Test
     public void givenCustomisationOnProperties_shouldProduceJSON() {
-        MapJsonToObject mapJsonToObject = new MapJsonToObject();
-        String result = mapJsonToObject.customizedMapping();
+        JsonBindingExample jsonBindingExample = new JsonBindingExample();
+        String result = jsonBindingExample.customizedMapping();
 
         assertThat(result).isEqualToIgnoringCase(customisedJson);
 
@@ -98,8 +98,8 @@ public class MapJsonToObjectTest extends JsonExample {
 
     @Test
     public void givenCustomisationOnMethods_shouldProduceJSON() {
-        MapJsonToObject mapJsonToObject = new MapJsonToObject();
-        String result = mapJsonToObject.annotationMethodMapping();
+        JsonBindingExample jsonBindingExample = new JsonBindingExample();
+        String result = jsonBindingExample.annotationMethodMapping();
 
         assertThat(result).isEqualToIgnoringCase(customisedJsonNewspaper);
 
@@ -117,24 +117,24 @@ public class MapJsonToObjectTest extends JsonExample {
 
     @Test
     public void givenAnnotationPojo_shouldProduceJson() {
-        MapJsonToObject mapJsonToObject = new MapJsonToObject();
-        String result = mapJsonToObject.annotationPropertiesMapping();
+        JsonBindingExample jsonBindingExample = new JsonBindingExample();
+        String result = jsonBindingExample.annotationPropertiesMapping();
 
         assertThat(result).isEqualToIgnoringCase(expectedMagazine);
     }
 
     @Test
     public void givenAdapter_shouldSerialiseJSON() {
-        MapJsonToObject mapJsonToObject = new MapJsonToObject();
-        String result = mapJsonToObject.bookAdapterToJson();
+        JsonBindingExample jsonBindingExample = new JsonBindingExample();
+        String result = jsonBindingExample.bookAdapterToJson();
         String json = "{\"isbn\":\"1234567890\",\"bookTitle\":\"Professional Java EE Design Patterns\",\"firstName\":\"Alex\",\"lastName\":\"Theedom\"}";
         assertThat(result).isEqualToIgnoringCase(json);
     }
 
     @Test
     public void givenAdapter_shouldDeserialiseJson() {
-        MapJsonToObject mapJsonToObject = new MapJsonToObject();
-        Book book = mapJsonToObject.bookAdapterToBook();
+        JsonBindingExample jsonBindingExample = new JsonBindingExample();
+        Book book = jsonBindingExample.bookAdapterToBook();
         assertThat(book).isEqualTo(bookAdapted);
     }
 }
