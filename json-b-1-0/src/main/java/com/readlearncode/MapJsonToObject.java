@@ -34,6 +34,14 @@ public class MapJsonToObject extends JsonExample {
         return JsonbBuilder.create().fromJson(bookListJson, new ArrayList<Book>().getClass().getGenericSuperclass());
     }
 
+    public String serializeArrayOfBooks() {
+        return JsonbBuilder.create().toJson(arrayBooks);
+    }
+
+    public String serializeArrayOfStrings() {
+        return JsonbBuilder.create().toJson(new String[]{"Java EE","Java SE"});
+    }
+
     public String customizedMapping() {
 
         JsonbConfig jsonbConfig = new JsonbConfig()

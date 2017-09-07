@@ -45,6 +45,8 @@ public class JsonExample {
 
     public List<Book> books = new ArrayList<>();
 
+    public Book[] arrayBooks = {book1, book2};
+
     public Magazine magazine = new Magazine();
 
     public JsonExample() {

@@ -51,6 +51,22 @@ public class MapJsonToObjectTest extends JsonExample {
     }
 
     @Test
+    public void givenArrayOfBooks_shouldSerialiseToJson() {
+        MapJsonToObject mapJsonToObject = new MapJsonToObject();
+        String json = mapJsonToObject.serializeArrayOfBooks();
+
+        assertThat(json).isEqualToIgnoringCase(bookListJson);
+    }
+
+    @Test
+    public void givenArrayOfStrings_shouldSerialiseToJson() {
+        MapJsonToObject mapJsonToObject = new MapJsonToObject();
+        String json = mapJsonToObject.serializeArrayOfStrings();
+
+        assertThat(json).isEqualToIgnoringCase("[\"Java EE\",\"Java SE\"]");
+    }
+
+    @Test
     public void givenCustomisation_shouldProduceJSON() {
         MapJsonToObject mapJsonToObject = new MapJsonToObject();
         String result = mapJsonToObject.customizedMapping();
