@@ -16,7 +16,7 @@ import java.util.List;
  * @author Alex Theedom www.readlearncode.com
  * @version 1.0
  */
-public class JsonBindingExample extends JsonExample {
+public class JsonBindingExample extends JsonData {
 
     public String serializeBook() {
         return JsonbBuilder.create().toJson(book1);

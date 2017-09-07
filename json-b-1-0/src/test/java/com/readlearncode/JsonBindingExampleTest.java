@@ -15,7 +15,7 @@ import static org.assertj.core.api.Java6Assertions.assertThat;
  * @author Alex Theedom www.readlearncode.com
  * @version 1.0
  */
-public class JsonBindingExampleTest extends JsonExample {
+public class JsonBindingExampleTest extends JsonData {
 
 
     @Test

@@ -11,7 +11,7 @@ import java.util.List;
  * @author Alex Theedom www.readlearncode.com
  * @version 1.0
  */
-public class JsonExample {
+public class JsonData {
 
     public String bookListJson = "[{\"author\":{\"firstName\":\"Alex\",\"lastName\":\"Theedom\"},\"binding\":\"SOFT_BACK\",\"id\":\"1234567890\",\"inPrint\":true,\"languages\":[\"English\",\"Polish\",\"Russian\",\"Chinese\"],\"pages\":300,\"price\":25.0,\"title\":\"Professional Java EE Design Patterns\"},{\"author\":{\"firstName\":\"John\",\"lastName\":\"Smith\"},\"binding\":\"HARD_BACK\",\"id\":\"ABCD123456\",\"inPrint\":true,\"languages\":[\"English\",\"French\",\"Spanish\",\"Greek\"],\"pages\":435,\"price\":30.0,\"title\":\"JSON-Binding Advanced\"}]";
     public String bookJson = "{\"author\":{\"firstName\":\"Alex\",\"lastName\":\"Theedom\"},\"binding\":\"SOFT_BACK\",\"id\":\"1234567890\",\"inPrint\":true,\"languages\":[\"English\",\"Polish\",\"Russian\",\"Chinese\"],\"pages\":300,\"price\":25.0,\"title\":\"Professional Java EE Design Patterns\"}";
@@ -49,7 +49,7 @@ public class JsonExample {
 
     public Newspaper newspaper = new Newspaper();
 
-    public JsonExample() {
+    public JsonData() {
         Author alex = new Author("Alex", "Theedom");
 
         book1.setId("1234567890");
