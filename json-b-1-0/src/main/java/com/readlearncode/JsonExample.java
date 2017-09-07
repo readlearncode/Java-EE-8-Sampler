@@ -1,5 +1,10 @@
 package com.readlearncode;
 
+import com.readlearncode.domain.Author;
+import com.readlearncode.domain.Binding;
+import com.readlearncode.domain.Book;
+import com.readlearncode.domain.Magazine;
+
 import java.util.ArrayList;
 import java.util.List;
 

@@ -1,5 +1,7 @@
-package com.readlearncode;
+package com.readlearncode.domain;
 
+import javax.json.bind.annotation.*;
+import javax.json.bind.config.PropertyOrderStrategy;
 import java.util.List;
 import java.util.Objects;
 
@@ -9,28 +11,33 @@ import java.util.Objects;
  * @author Alex Theedom www.readlearncode.com
  * @version 1.0
  */
-public class Book {
+@JsonbNillable
+@JsonbPropertyOrder(PropertyOrderStrategy.LEXICOGRAPHICAL)
+public class Magazine {
 
     private String id;
 
     private String title;
 
+    @JsonbProperty("writer")
     private Author author;
 
+    @JsonbNumberFormat("#0.00")
     private Float price;
 
     private int pages;
 
+    @JsonbTransient
     private boolean inPrint;
 
     private Binding binding;
 
     private List<String> languages;
 
-    public Book() {
+    public Magazine() {
     }
 
-    public Book(String id, String title, Author author, Float price, int pages, boolean inPrint, Binding binding, List<String> languages) {
+    public Magazine(String id, String title, Author author, Float price, int pages, boolean inPrint, Binding binding, List<String> languages) {
         this.id = id;
         this.title = title;
         this.author = author;
@@ -109,7 +116,7 @@ public class Book {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Book book = (Book) o;
+        Magazine book = (Magazine) o;
         return pages == book.pages &&
                 inPrint == book.inPrint &&
                 Objects.equals(id, book.id) &&

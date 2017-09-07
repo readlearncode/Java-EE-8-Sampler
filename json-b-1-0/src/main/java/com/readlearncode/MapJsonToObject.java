@@ -1,5 +1,7 @@
 package com.readlearncode;
 
+import com.readlearncode.domain.Book;
+
 import javax.json.bind.Jsonb;
 import javax.json.bind.JsonbBuilder;
 import javax.json.bind.JsonbConfig;
