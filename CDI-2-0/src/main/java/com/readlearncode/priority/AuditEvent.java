@@ -1,4 +1,4 @@
-package com.readlearncode;
+package com.readlearncode.priority;
 
 import java.util.Objects;
 

@@ -115,6 +115,14 @@ public class JsonBindingExampleTest extends JsonData {
          */
     }
 
+
+    @Test
+    public void givenCustomisationOnPropertiesAndMethods_shouldProduceJSON() {
+        JsonBindingExample jsonBindingExample = new JsonBindingExample();
+        String result = jsonBindingExample.annotationPropertyAndMethodMapping();
+        assertThat(result).isEqualToIgnoringCase("{\"cost\":\"10.00\",\"author\":{\"firstName\":\"Alex\",\"lastName\":\"Theedom\"}}");
+    }
+
     @Test
     public void givenAnnotationPojo_shouldProduceJson() {
         JsonBindingExample jsonBindingExample = new JsonBindingExample();

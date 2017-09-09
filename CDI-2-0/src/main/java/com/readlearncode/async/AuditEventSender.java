@@ -1,8 +1,9 @@
-package com.readlearncode;
+package com.readlearncode.async;
+
+import com.readlearncode.priority.AuditEvent;
 
 import javax.enterprise.event.Event;
 import javax.inject.Inject;
-import java.util.concurrent.CompletionStage;
 
 /**
  * Source code github.com/readlearncode
@@ -15,8 +16,7 @@ public class AuditEventSender {
     @Inject
     private Event<AuditEvent> event;
 
-    public CompletionStage<AuditEvent> sendAsync(AuditEvent auditEvent) {
-        System.out.println("Sending async");
-        return event.fireAsync(auditEvent);
+    public void send(AuditEvent auditEvent) {
+        event.fire(auditEvent);
     }
 }

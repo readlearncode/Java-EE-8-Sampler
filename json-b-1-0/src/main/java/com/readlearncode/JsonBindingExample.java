@@ -64,6 +64,10 @@ public class JsonBindingExample extends JsonData {
         return JsonbBuilder.create().toJson(newspaper);
     }
 
+    public String annotationPropertyAndMethodMapping(){
+        return JsonbBuilder.create().toJson(booklet);
+    }
+
     public String bookAdapterToJson(){
         JsonbConfig jsonbConfig = new JsonbConfig().withAdapters(new BookAdapter());
         Jsonb jsonb = JsonbBuilder.create(jsonbConfig);
@@ -75,5 +79,12 @@ public class JsonBindingExample extends JsonData {
         Jsonb jsonb = JsonbBuilder.create(jsonbConfig);
         String json = "{\"isbn\":\"1234567890\",\"bookTitle\":\"Professional Java EE Design Patterns\",\"firstName\":\"Alex\",\"lastName\":\"Theedom\"}";
         return jsonb.fromJson(json, Book.class);
+    }
+
+
+    public void usingAProvider(){
+
+        JsonbBuilder builder = JsonbBuilder.newBuilder("aProvider");
+
     }
 }

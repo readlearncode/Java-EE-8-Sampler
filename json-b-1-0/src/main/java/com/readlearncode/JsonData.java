@@ -49,6 +49,8 @@ public class JsonData {
 
     public Newspaper newspaper = new Newspaper();
 
+    public Booklet booklet = new Booklet();
+
     public JsonData() {
         Author alex = new Author("Alex", "Theedom");
 
@@ -109,6 +111,10 @@ public class JsonData {
         newspaper.setTitle("Java Today");
         newspaper.setInPrint(true);
         newspaper.setPrice(1.00F);
+
+        booklet.setTitle("Java 101");
+        booklet.setPrice(10.00F);
+        booklet.setAuthor(alex);
 
     }
 

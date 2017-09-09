@@ -1,4 +1,4 @@
-package com.readlearncode;
+package com.readlearncode.priority;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.event.ObservesAsync;
