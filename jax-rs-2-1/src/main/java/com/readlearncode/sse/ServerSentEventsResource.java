@@ -15,7 +15,7 @@ import java.util.concurrent.ScheduledExecutorService;
  * @author Alex Theedom www.readlearncode.com
  * @version 1.0
  */
-@Path("server-sent-events")
+@Path("sse")
 public class ServerSentEventsResource {
 
     private final Object outputLock = new Object();
@@ -62,8 +62,7 @@ public class ServerSentEventsResource {
 
         executorService.submit(() -> {
             try {
-                eventSink.send(sse.newEventBuilder().name("domain-progress")
-                        .data(String.class, "starting domain " + id + " ...").build());
+                eventSink.send(sse.newEventBuilder().name("domain-progress").data(String.class, "starting domain " + id + " ...").build());
                 Thread.sleep(200);
                 eventSink.send(sse.newEvent("domain-progress", "50%"));
                 Thread.sleep(200);
@@ -80,4 +79,27 @@ public class ServerSentEventsResource {
             }
         });
     }
+
+
+    @POST
+    @Path("progress/{report_id}")
+    @Produces(MediaType.SERVER_SENT_EVENTS)
+    public void eventStream(@PathParam("report_id") final String id,
+                            @Context SseEventSink es,
+                            @Context Sse sse) {
+        executorService.execute(() -> {
+            try {
+                eventSink.send(sse.newEventBuilder().name("report-progress")
+                        .data(String.class, "Commencing process for report " + id + " ...").build());
+                es.send(sse.newEvent("Progress", "25%"));
+                Thread.sleep(500);
+                es.send(sse.newEvent("Progress", "50%"));
+                Thread.sleep(500);
+                es.send(sse.newEvent("Progress", "75%"));
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        });
+    }
+
 }

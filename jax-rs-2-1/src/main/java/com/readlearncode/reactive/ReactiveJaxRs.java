@@ -42,7 +42,7 @@ public class ReactiveJaxRs {
             e.printStackTrace();
         }
 
-        cs1.thenCombine(cs2, (r1, r2) -> concat).thenAccept(System.out::println);
+        cs1.thenCombine(cs2, (r1, r2) -> r1.readEntity(String.class) + r2.readEntity(String.class)).thenAccept(System.out::println);
 
         return Response.noContent().build();
     }
