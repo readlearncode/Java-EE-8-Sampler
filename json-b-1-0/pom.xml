@@ -29,6 +29,7 @@
     <properties>
         <javax.json.version>1.1</javax.json.version>
         <javax.json.bind-api.version>1.0</javax.json.bind-api.version>
+        <yasson.version>1.0</yasson.version>
     </properties>
 
     <dependencies>
@@ -48,11 +49,10 @@
             <artifactId>javax.json.bind-api</artifactId>
             <version>${javax.json.bind-api.version}</version>
         </dependency>
-
         <dependency>
             <groupId>org.eclipse</groupId>
             <artifactId>yasson</artifactId>
-            <version>${javax.json.bind-api.version}</version>
+            <version>${yasson.version}</version>
         </dependency>
 
 
