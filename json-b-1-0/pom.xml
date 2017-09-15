@@ -15,18 +15,20 @@
     <name>json-b-1-0</name>
 
     <repositories>
+        <!--<repository>-->
+            <!--<id>java.net-Public</id>-->
+            <!--<name>Maven Java Net Snapshots and Releases</name>-->
+            <!--<url>https://maven.java.net/content/groups/public/</url>-->
+        <!--</repository>-->
         <repository>
-            <id>java.net-Public</id>
-            <name>Maven Java Net Snapshots and Releases</name>
-            <url>https://maven.java.net/content/groups/public/</url>
+            <id>Yasson Release</id>
+            <url>https://repo.eclipse.org/content/repositories/yasson-releases/</url>
         </repository>
     </repositories>
 
     <properties>
-        <javax.json-api.version>1.1</javax.json-api.version>
         <javax.json.version>1.1</javax.json.version>
-        <javax.json.bind-api.version>1.0.0-RC2</javax.json.bind-api.version>
-        <yasson.version>1.0.0-RC2</yasson.version>
+        <javax.json.bind-api.version>1.0</javax.json.bind-api.version>
     </properties>
 
     <dependencies>
@@ -34,9 +36,13 @@
         <dependency>
             <groupId>javax.json</groupId>
             <artifactId>javax.json-api</artifactId>
-            <version>${javax.json-api.version}</version>
+            <version>${javax.json.version}</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.glassfish</groupId>
+            <artifactId>javax.json</artifactId>
+            <version>${javax.json.version}</version>
+        </dependency>
         <dependency>
             <groupId>javax.json.bind</groupId>
             <artifactId>javax.json.bind-api</artifactId>
@@ -46,14 +52,10 @@
         <dependency>
             <groupId>org.eclipse</groupId>
             <artifactId>yasson</artifactId>
-            <version>${yasson.version}</version>
+            <version>${javax.json.bind-api.version}</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.glassfish</groupId>
-            <artifactId>javax.json</artifactId>
-            <version>${javax.json.version}</version>
-        </dependency>
+
 
         <!-- Test Dependencies -->
         <dependency>
