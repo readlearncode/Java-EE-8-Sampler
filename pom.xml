@@ -29,6 +29,8 @@
         <module>json-p-1-1</module>
         <module>jax-rs-2-1</module>
         <module>CDI-2-0</module>
+        <module>Bean-Validation-2-0</module>
+        <module>security-1-0</module>
     </modules>
 
     <properties>
