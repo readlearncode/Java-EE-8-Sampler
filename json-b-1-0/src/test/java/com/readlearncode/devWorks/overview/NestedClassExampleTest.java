@@ -1,5 +1,6 @@
 package com.readlearncode.devWorks.overview;
 
+import com.readlearncode.devWorks.overview.domain.OuterClass;
 import org.junit.Test;
 
 import static org.assertj.core.api.Java6Assertions.assertThat;

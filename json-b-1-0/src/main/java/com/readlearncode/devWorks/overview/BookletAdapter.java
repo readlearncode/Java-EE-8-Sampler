@@ -1,6 +1,7 @@
 package com.readlearncode.devWorks.overview;
 
-import com.readlearncode.domain.Author;
+import com.readlearncode.devWorks.overview.domain.Author;
+import com.readlearncode.devWorks.overview.domain.Booklet;
 
 import javax.json.Json;
 import javax.json.JsonObject;
@@ -12,7 +13,7 @@ import javax.json.bind.adapter.JsonbAdapter;
  * @author Alex Theedom www.readlearncode.com
  * @version 1.0
  */
-public class bookletAdapter implements JsonbAdapter<Booklet, JsonObject> {
+public class BookletAdapter implements JsonbAdapter<Booklet, JsonObject> {
 
     @Override
     public JsonObject adaptToJson(Booklet booklet) throws Exception {

@@ -1,5 +1,6 @@
 package com.readlearncode.devWorks.overview;
 
+import com.readlearncode.devWorks.overview.domain.Booklet;
 import org.junit.Test;
 
 import javax.json.bind.JsonbBuilder;
@@ -19,7 +20,7 @@ public class BookletAdapterTest {
     public void givenJSON_shouldUseAdapterToDeserialise() {
         String actualJson = "{\"title\":\"Fun with Java\",\"firstName\":\"Alex\",\"lastName\":\"Theedom\"}";
         Booklet actualBooklet = new Booklet("Fun with Java", "Alex", "Theedom");
-        JsonbConfig config = new JsonbConfig().withAdapters(new bookletAdapter());
+        JsonbConfig config = new JsonbConfig().withAdapters(new BookletAdapter());
         Booklet expectedBooklet = JsonbBuilder.create(config).fromJson(actualJson, Booklet.class);
 
         assertThat(actualBooklet).isEqualTo(expectedBooklet);
@@ -29,7 +30,7 @@ public class BookletAdapterTest {
     public void givenBookObject_shouldUseAdapterToSerialise() {
         String expectedJson = "{\"title\":\"Fun with Java\",\"firstName\":\"Alex\",\"lastName\":\"Theedom\"}";
         Booklet booklet = new Booklet("Fun with Java", "Alex", "Theedom");
-        JsonbConfig config = new JsonbConfig().withAdapters(new bookletAdapter());
+        JsonbConfig config = new JsonbConfig().withAdapters(new BookletAdapter());
         String actualJson = JsonbBuilder.create(config).toJson(booklet);
 
         assertThat(actualJson).isEqualTo(expectedJson);

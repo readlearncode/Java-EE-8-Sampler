@@ -1,5 +1,8 @@
 package com.readlearncode.devWorks.overview;
 
+import com.readlearncode.devWorks.overview.domain.Author;
+import com.readlearncode.devWorks.overview.domain.Binding;
+import com.readlearncode.devWorks.overview.domain.Magazine;
 import org.junit.Test;
 
 import java.net.MalformedURLException;

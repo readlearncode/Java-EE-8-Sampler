@@ -1,5 +1,7 @@
 package com.readlearncode.devWorks.overview;
 
+import com.readlearncode.devWorks.overview.domain.Binding;
+
 import javax.json.bind.JsonbBuilder;
 
 /**
@@ -11,7 +13,7 @@ import javax.json.bind.JsonbBuilder;
 public class EnumExample {
 
     public String enumSerialisation() {
-        return JsonbBuilder.create().toJson(Binding.HARD_BACK);
+        return JsonbBuilder.create().toJson(Binding.HARD_BACK.name());
     }
 
     public class container {

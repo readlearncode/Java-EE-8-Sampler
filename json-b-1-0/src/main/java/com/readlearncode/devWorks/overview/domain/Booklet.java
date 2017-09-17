@@ -1,7 +1,8 @@
-package com.readlearncode.devWorks.overview;
+package com.readlearncode.devWorks.overview.domain;
 
-import com.readlearncode.domain.Author;
+import com.readlearncode.devWorks.overview.BookletAdapter;
 
+import javax.json.bind.annotation.JsonbTypeAdapter;
 import java.util.Objects;
 
 /**
@@ -10,6 +11,7 @@ import java.util.Objects;
  * @author Alex Theedom www.readlearncode.com
  * @version 1.0
  */
+@JsonbTypeAdapter(BookletAdapter.class)
 public class Booklet {
 
     private String title;

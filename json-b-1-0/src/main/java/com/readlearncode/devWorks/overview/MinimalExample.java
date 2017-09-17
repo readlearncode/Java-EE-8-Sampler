@@ -1,5 +1,7 @@
 package com.readlearncode.devWorks.overview;
 
+import com.readlearncode.devWorks.overview.domain.Book;
+
 import javax.json.bind.Jsonb;
 import javax.json.bind.JsonbBuilder;
 

@@ -1,4 +1,4 @@
-package com.readlearncode.devWorks.overview;
+package com.readlearncode.devWorks.overview.domain;
 
 import java.util.Objects;
 

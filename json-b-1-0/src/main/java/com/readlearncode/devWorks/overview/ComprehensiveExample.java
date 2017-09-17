@@ -1,6 +1,10 @@
 package com.readlearncode.devWorks.overview;
 
 
+import com.readlearncode.devWorks.overview.domain.Author;
+import com.readlearncode.devWorks.overview.domain.Binding;
+import com.readlearncode.devWorks.overview.domain.Magazine;
+
 import javax.json.bind.JsonbBuilder;
 import java.net.MalformedURLException;
 import java.net.URL;
