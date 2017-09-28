@@ -18,7 +18,7 @@ import static org.assertj.core.api.Java6Assertions.assertThat;
  * @author Alex Theedom www.readlearncode.com
  * @version 1.0
  */
-public class ToJsonExamples {
+public class ToJsonExampleTest {
 
     private Jsonb jsonb = JsonbBuilder.create();
     private String expectedJson = "{\"author\":{\"firstName\":\"Alex\",\"lastName\":\"Theedom\"},\"binding\":\"SOFT_BACK\",\"id\":\"1234567890\",\"inPrint\":true,\"languages\":[\"English\",\"Polish\",\"Russian\",\"Chinese\"],\"pages\":300,\"price\":25.0,\"title\":\"Fun with Java EE\"}";

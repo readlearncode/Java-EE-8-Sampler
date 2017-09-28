@@ -25,7 +25,7 @@ public class Book {
 
     private boolean inPrint;
     
-    private AtomicInteger count = new AtomicInteger(0);
+    private AtomicInteger count;
 
     private Byte version;
 

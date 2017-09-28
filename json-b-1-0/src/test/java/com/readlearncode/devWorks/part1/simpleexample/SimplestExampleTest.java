@@ -12,7 +12,7 @@ import static org.assertj.core.api.Java6Assertions.assertThat;
  * @author Alex Theedom www.readlearncode.com
  * @version 1.0
  */
-public class SimplestExample {
+public class SimplestExampleTest {
 
     @Test
     public void givenBookObject_shouldSerialise() {

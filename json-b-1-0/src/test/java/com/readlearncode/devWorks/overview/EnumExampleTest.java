@@ -1,5 +1,6 @@
 package com.readlearncode.devWorks.overview;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.assertj.core.api.Java6Assertions.assertThat;
@@ -20,7 +21,7 @@ public class EnumExampleTest {
         assertThat(actualJson).isEqualTo(expectedJson);
     }
 
-    @Test
+    @Test @Ignore
     public void givenEnum_shouldThrownExceptionWhenSerialised() {
 //        assertThatThrownBy(() ->
                 new EnumExample().enumSerialisation();
