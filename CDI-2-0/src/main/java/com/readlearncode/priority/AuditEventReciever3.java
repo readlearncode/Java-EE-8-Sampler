@@ -17,8 +17,9 @@ import static javax.interceptor.Interceptor.Priority.APPLICATION;
 @ApplicationScoped
 public class AuditEventReciever3 {
 
+    // Order: 3rd
     public void receive(@Observes @Priority(APPLICATION + 500) AuditEvent auditEvent) {
-        System.out.println("Priority: " + APPLICATION + 500 +
+        System.out.println("Priority: " + (APPLICATION + 500) + " " +
                 auditEvent.getPriority() + " " + auditEvent.getMessage());
     }
 

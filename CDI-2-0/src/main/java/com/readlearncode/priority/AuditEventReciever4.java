@@ -14,8 +14,9 @@ import javax.enterprise.event.ObservesAsync;
 @ApplicationScoped
 public class AuditEventReciever4 {
 
+    // Order: Doesn't fire
     public void receive(@ObservesAsync AuditEvent auditEvent) {
-        System.out.println("Priority: no (ObservesAsync)" +
+                System.out.println("Priority: no (ObservesAsync) " +
                 auditEvent.getPriority() + " " + auditEvent.getMessage());
     }
 

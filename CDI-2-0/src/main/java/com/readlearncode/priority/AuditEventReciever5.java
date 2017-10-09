@@ -15,8 +15,9 @@ import javax.enterprise.event.Observes;
 @ApplicationScoped
 public class AuditEventReciever5 {
 
+    // Order: 4th
     public void receive(@Observes @Priority(5000) AuditEvent auditEvent) {
-        System.out.println("Priority: 5000" +
+        System.out.println("Priority: 5000 " +
                 auditEvent.getPriority() + " " + auditEvent.getMessage());
     }
 

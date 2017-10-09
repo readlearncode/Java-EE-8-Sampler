@@ -20,7 +20,6 @@ import static com.readlearncode.async.AuditEvent.Priority.HIGH;
 @Startup
 public class AuditEventSender {
 
-
     @Inject
     private Event<AuditEvent> event;
 
