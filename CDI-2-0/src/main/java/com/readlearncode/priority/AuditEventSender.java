@@ -1,8 +1,14 @@
 package com.readlearncode.priority;
 
+import com.readlearncode.async.AuditEvent;
+
+import javax.annotation.PostConstruct;
+import javax.ejb.Startup;
+import javax.ejb.Singleton;
 import javax.enterprise.event.Event;
 import javax.inject.Inject;
-import java.util.concurrent.CompletionStage;
+
+import static com.readlearncode.async.AuditEvent.Priority.HIGH;
 
 /**
  * Source code github.com/readlearncode
@@ -10,23 +16,18 @@ import java.util.concurrent.CompletionStage;
  * @author Alex Theedom www.readlearncode.com
  * @version 1.0
  */
+@Singleton
+@Startup
 public class AuditEventSender {
+
 
     @Inject
     private Event<AuditEvent> event;
 
-    public CompletionStage<AuditEvent> sendAsync(AuditEvent auditEvent) {
-        System.out.println("Sending async");
-        CompletionStage<AuditEvent> stage = event.fireAsync(auditEvent)
-                .handle((event, ex) -> {
-                    if (event != null) {
-                        return event;
-                    } else {
-                        for (Throwable t : ex.getSuppressed()) {}
-                        return auditEvent;
-                    }
-                });
-
-        return stage;
+    @PostConstruct
+    public void send() {
+        event.fire(new AuditEvent("Security Violation", HIGH));
     }
+
+
 }

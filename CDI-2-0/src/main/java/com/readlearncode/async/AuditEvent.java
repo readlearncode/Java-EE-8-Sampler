@@ -1,4 +1,4 @@
-package com.readlearncode.priority;
+package com.readlearncode.async;
 
 import java.util.Objects;
 
@@ -10,7 +10,15 @@ import java.util.Objects;
  */
 public class AuditEvent {
 
-    enum Priority { HIGH, LOW }
+    public enum Priority { HIGH, LOW }
+
+    public AuditEvent() {
+    }
+
+    public AuditEvent(String message, Priority priority) {
+        this.message = message;
+        this.priority = priority;
+    }
 
     private String message;
     private Priority priority = Priority.LOW;
@@ -49,7 +57,7 @@ public class AuditEvent {
     public String toString() {
         return "AuditEvent{" +
                 "message='" + message + '\'' +
-                ", priority=" + priority +
+                ", async=" + priority +
                 '}';
     }
 }

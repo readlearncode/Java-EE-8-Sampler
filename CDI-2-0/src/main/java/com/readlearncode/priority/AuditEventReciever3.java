@@ -1,10 +1,12 @@
-package com.readlearncode.async;
+package com.readlearncode.priority;
 
-import com.readlearncode.priority.AuditEvent;
+import com.readlearncode.async.AuditEvent;
 
 import javax.annotation.Priority;
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.event.Observes;
+
+import static javax.interceptor.Interceptor.Priority.APPLICATION;
 
 /**
  * Source code github.com/readlearncode
@@ -13,10 +15,10 @@ import javax.enterprise.event.Observes;
  * @version 1.0
  */
 @ApplicationScoped
-public class AuditEventReciever1 {
+public class AuditEventReciever3 {
 
-    public void receive(@Observes @Priority(10) AuditEvent auditEvent) {
-        System.out.println(
+    public void receive(@Observes @Priority(APPLICATION + 500) AuditEvent auditEvent) {
+        System.out.println("Priority: " + APPLICATION + 500 +
                 auditEvent.getPriority() + " " + auditEvent.getMessage());
     }
 
