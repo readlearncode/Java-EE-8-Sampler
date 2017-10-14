@@ -1,5 +1,7 @@
 package com.readlearncode.devWorks.part2.treatementofnulls;
 
+import com.readlearncode.devWorks.part1.treatmentofnulls.OptionalAndValueExample;
+import com.readlearncode.devWorks.part1.treatmentofnulls.OptionalExample;
 import org.junit.Test;
 
 import javax.json.bind.Jsonb;

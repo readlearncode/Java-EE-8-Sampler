@@ -1,4 +1,4 @@
-package com.readlearncode.devWorks.part2.treatementofnulls;
+package com.readlearncode.devWorks.part1.treatmentofnulls;
 
 import javax.json.bind.annotation.JsonbNillable;
 import java.util.Optional;
