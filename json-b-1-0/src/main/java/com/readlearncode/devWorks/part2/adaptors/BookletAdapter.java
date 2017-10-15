@@ -1,7 +1,4 @@
-package com.readlearncode.devWorks.overview;
-
-import com.readlearncode.devWorks.overview.domain.Author;
-import com.readlearncode.devWorks.overview.domain.Booklet;
+package com.readlearncode.devWorks.part2.adaptors;
 
 import javax.json.Json;
 import javax.json.JsonObject;
@@ -26,9 +23,9 @@ public class BookletAdapter implements JsonbAdapter<Booklet, JsonObject> {
 
     @Override
     public Booklet adaptFromJson(JsonObject json) {
-        Booklet booklet = new Booklet("Fun with Java", "Alex", "Theedom");
-        booklet.setTitle(json.getString("title"));
-        booklet.setAuthor(new Author(json.getString("firstName"), json.getString("lastName")));
+        Booklet booklet = new Booklet(
+                json.getString("title"),
+                new Author(json.getString("firstName"), json.getString("lastName")));
         return booklet;
     }
 }
