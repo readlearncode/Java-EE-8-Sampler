@@ -12,7 +12,7 @@ import static org.assertj.core.api.Java6Assertions.assertThat;
  * @author Alex Theedom www.readlearncode.com
  * @version 1.0
  */
-public class CustomisePropertyNameTest {
+public class CustomiseJsonbPropertyTest {
 
     @Test
     public void givenFieldAnnotateWithJsonbProperty_shouldChangeOfField() {

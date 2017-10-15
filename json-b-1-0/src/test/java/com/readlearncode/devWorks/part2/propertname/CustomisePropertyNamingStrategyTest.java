@@ -16,22 +16,13 @@ import static org.assertj.core.api.Java6Assertions.assertThat;
  * @author Alex Theedom www.readlearncode.com
  * @version 1.0
  */
-public class CustomisePropertyStrategyTest {
+public class CustomisePropertyNamingStrategyTest {
 
-/*
-• IDENTITY
-• LOWER_CASE_WITH_DASHES
-• LOWER_CASE_WITH_UNDERSCORES
-• UPPER_CAMEL_CASE
-• UPPER_CAMEL_CASE_WITH_SPACES
-• CASE_INSENSITIVE
- */
-
-    private Magazine expectedMagazine;
+    private Magazine magazine;
 
     @Before
     public void setUp() {
-        expectedMagazine = new Magazine("Fun with JSON binding", new Author("Alex", "Theedom"), "ABC-123", "01846537");
+        magazine = new Magazine("Fun with JSON binding", new Author("Alex", "Theedom"), "ABC-123", "01846537");
     }
 
     @Test
@@ -51,7 +42,7 @@ public class CustomisePropertyStrategyTest {
         JsonbConfig jsonbConfig = new JsonbConfig()
                 .withPropertyNamingStrategy(PropertyNamingStrategy.IDENTITY);
 
-        String actualJson = JsonbBuilder.create(jsonbConfig).toJson(expectedMagazine);
+        String actualJson = JsonbBuilder.create(jsonbConfig).toJson(magazine);
 
         assertThat(actualJson).isEqualTo(expectedJson);
     }
@@ -74,7 +65,7 @@ public class CustomisePropertyStrategyTest {
         JsonbConfig jsonbConfig = new JsonbConfig()
                 .withPropertyNamingStrategy(PropertyNamingStrategy.LOWER_CASE_WITH_DASHES);
 
-        String actualJson = JsonbBuilder.create(jsonbConfig).toJson(expectedMagazine);
+        String actualJson = JsonbBuilder.create(jsonbConfig).toJson(magazine);
 
         assertThat(actualJson).isEqualTo(expectedJson);
     }
@@ -121,7 +112,7 @@ public class CustomisePropertyStrategyTest {
         JsonbConfig jsonbConfig = new JsonbConfig()
                 .withPropertyNamingStrategy(PropertyNamingStrategy.LOWER_CASE_WITH_UNDERSCORES);
 
-        String actualJson = JsonbBuilder.create(jsonbConfig).toJson(expectedMagazine);
+        String actualJson = JsonbBuilder.create(jsonbConfig).toJson(magazine);
 
         assertThat(actualJson).isEqualTo(expectedJson);
     }
@@ -144,7 +135,7 @@ public class CustomisePropertyStrategyTest {
         JsonbConfig jsonbConfig = new JsonbConfig()
                 .withPropertyNamingStrategy(PropertyNamingStrategy.UPPER_CAMEL_CASE);
 
-        String actualJson = JsonbBuilder.create(jsonbConfig).toJson(expectedMagazine);
+        String actualJson = JsonbBuilder.create(jsonbConfig).toJson(magazine);
 
         assertThat(actualJson).isEqualTo(expectedJson);
     }
@@ -166,7 +157,7 @@ public class CustomisePropertyStrategyTest {
         JsonbConfig jsonbConfig = new JsonbConfig()
                 .withPropertyNamingStrategy(PropertyNamingStrategy.UPPER_CAMEL_CASE_WITH_SPACES);
 
-        String actualJson = JsonbBuilder.create(jsonbConfig).toJson(expectedMagazine);
+        String actualJson = JsonbBuilder.create(jsonbConfig).toJson(magazine);
 
         assertThat(actualJson).isEqualTo(expectedJson);
     }
@@ -188,7 +179,7 @@ public class CustomisePropertyStrategyTest {
         JsonbConfig jsonbConfig = new JsonbConfig()
                 .withPropertyNamingStrategy(PropertyNamingStrategy.CASE_INSENSITIVE);
 
-        String actualJson = JsonbBuilder.create(jsonbConfig).toJson(expectedMagazine);
+        String actualJson = JsonbBuilder.create(jsonbConfig).toJson(magazine);
 
         assertThat(actualJson).isEqualTo(expectedJson);
     }

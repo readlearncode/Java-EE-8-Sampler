@@ -1,4 +1,4 @@
-package com.readlearncode.devWorks.part2.propertyorder.domain;
+package com.readlearncode.devWorks.part2.treatementofnulls;
 
 import java.util.Objects;
 

@@ -1,8 +1,8 @@
-package com.readlearncode.devWorks.part2.propertyorder.domain;
+package com.readlearncode.devWorks.part2.dateandnumberformat;
 
-import com.readlearncode.devWorks.overview.BookletAdapter;
+import com.readlearncode.devWorks.overview.domain.Author;
 
-import javax.json.bind.annotation.JsonbTypeAdapter;
+import javax.json.bind.annotation.JsonbNumberFormat;
 import java.util.Objects;
 
 /**
@@ -11,16 +11,19 @@ import java.util.Objects;
  * @author Alex Theedom www.readlearncode.com
  * @version 1.0
  */
-@JsonbTypeAdapter(BookletAdapter.class)
 public class Booklet {
 
     private String title;
 
     private Author author;
 
-    public Booklet(String title, String firstName, String lastName) {
+    @JsonbNumberFormat("#.00")
+    private double price;
+
+    public Booklet(String title, String firstName, String lastName, double price) {
         this.title = title;
         this.author = new Author(firstName, lastName);
+        this.price = price;
     }
 
     public String getTitle() {
@@ -39,18 +42,27 @@ public class Booklet {
         this.author = author;
     }
 
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Booklet booklet = (Booklet) o;
-        return Objects.equals(title, booklet.title) &&
+        return Double.compare(booklet.price, price) == 0 &&
+                Objects.equals(title, booklet.title) &&
                 Objects.equals(author, booklet.author);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(title, author);
+        return Objects.hash(title, author, price);
     }
 
     @Override
@@ -58,6 +70,7 @@ public class Booklet {
         return "Booklet{" +
                 "title='" + title + '\'' +
                 ", author=" + author +
+                ", price=" + price +
                 '}';
     }
 }

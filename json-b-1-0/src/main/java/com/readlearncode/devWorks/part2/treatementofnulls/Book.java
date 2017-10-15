@@ -1,5 +1,6 @@
-package com.readlearncode.devWorks.part2.propertyorder.domain;
+package com.readlearncode.devWorks.part2.treatementofnulls;
 
+import javax.json.bind.annotation.JsonbNillable;
 import java.util.Objects;
 
 /**
@@ -8,6 +9,7 @@ import java.util.Objects;
  * @author Alex Theedom www.readlearncode.com
  * @version 1.0
  */
+@JsonbNillable
 public class Book {
 
     private String id;
@@ -41,7 +43,7 @@ public class Book {
         this.title = title;
     }
 
-    public String  getAuthor() {
+    public String getAuthor() {
         return author;
     }
 

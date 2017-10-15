@@ -1,8 +1,7 @@
-package com.readlearncode.devWorks.part2.propertname;
+package com.readlearncode.devWorks.part2.treatementofnulls;
 
-import com.readlearncode.devWorks.overview.BookletAdapter;
+import com.readlearncode.devWorks.overview.domain.Author;
 
-import javax.json.bind.annotation.JsonbTypeAdapter;
 import java.util.Objects;
 
 /**
@@ -11,7 +10,6 @@ import java.util.Objects;
  * @author Alex Theedom www.readlearncode.com
  * @version 1.0
  */
-@JsonbTypeAdapter(BookletAdapter.class)
 public class Booklet {
 
     private String title;
@@ -31,7 +29,7 @@ public class Booklet {
         this.title = title;
     }
 
-    public Author getAuthor() {
+    public com.readlearncode.devWorks.overview.domain.Author getAuthor() {
         return author;
     }
 
