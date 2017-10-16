@@ -23,7 +23,6 @@ public class BookSerializerTest {
         JsonbConfig config = new JsonbConfig().withSerializers(new BookSerializer());
         Jsonb jsonb = JsonbBuilder.newBuilder().withConfig(config).build();
         String actualJson = jsonb.toJson(book);
-
         assertThat(actualJson).isEqualTo(expectedJson);
     }
 

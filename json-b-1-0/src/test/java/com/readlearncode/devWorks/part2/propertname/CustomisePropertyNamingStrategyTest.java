@@ -22,14 +22,14 @@ public class CustomisePropertyNamingStrategyTest {
 
     @Before
     public void setUp() {
-        magazine = new Magazine("Fun with JSON binding", new Author("Alex", "Theedom"), "ABC-123", "01846537");
+        magazine = new Magazine("Fun with JSON binding", new Author("Alex", "Theedom"), "ABC-123", "Fun with JSON-B");
     }
 
     @Test
     public void givenIDENTITYStrategy_shouldNotChangeAnyPropertyName() {
         /*
             {
-              "alternativetitle": "01846537",
+              "alternativetitle": "Fun with JSON-B",
               "authorName": {
                 "firstName": "Alex",
                 "lastName": "Theedom"
@@ -38,7 +38,7 @@ public class CustomisePropertyNamingStrategyTest {
             }
          */
 
-        String expectedJson = "{\"alternativetitle\":\"01846537\",\"authorName\":{\"firstName\":\"Alex\",\"lastName\":\"Theedom\"},\"title\":\"Fun with JSON binding\"}";
+        String expectedJson = "{\"alternativetitle\":\"Fun with JSON-B\",\"authorName\":{\"firstName\":\"Alex\",\"lastName\":\"Theedom\"},\"title\":\"Fun with JSON binding\"}";
         JsonbConfig jsonbConfig = new JsonbConfig()
                 .withPropertyNamingStrategy(PropertyNamingStrategy.IDENTITY);
 
@@ -52,7 +52,7 @@ public class CustomisePropertyNamingStrategyTest {
     public void givenLOWER_CASE_WITH_DASHESStrategy_shouldDelimitPropertyNameWithDashes() {
         /*
             {
-              "alternativetitle": "01846537",
+              "alternativetitle": "Fun with JSON-B",
               "author-name": {
                 "first-name": "Alex",
                 "last-name": "Theedom"
@@ -61,7 +61,7 @@ public class CustomisePropertyNamingStrategyTest {
             }
          */
 
-        String expectedJson = "{\"alternativetitle\":\"01846537\",\"author-name\":{\"first-name\":\"Alex\",\"last-name\":\"Theedom\"},\"title\":\"Fun with JSON binding\"}";
+        String expectedJson = "{\"alternativetitle\":\"Fun with JSON-B\",\"author-name\":{\"first-name\":\"Alex\",\"last-name\":\"Theedom\"},\"title\":\"Fun with JSON binding\"}";
         JsonbConfig jsonbConfig = new JsonbConfig()
                 .withPropertyNamingStrategy(PropertyNamingStrategy.LOWER_CASE_WITH_DASHES);
 
@@ -74,7 +74,7 @@ public class CustomisePropertyNamingStrategyTest {
     public void givenLOWER_CASE_WITH_DASHESStrategy_shouldDeserialiseCorrectly() {
         /*
             {
-              "alternativetitle": "01846537",
+              "alternativetitle": "Fun with JSON-B",
               "author-name": {
                 "first-name": "Alex",
                 "last-name": "Theedom"
@@ -83,13 +83,13 @@ public class CustomisePropertyNamingStrategyTest {
             }
          */
 
-        String expectedJson = "{\"alternativetitle\":\"01846537\",\"author-name\":{\"first-name\":\"Alex\",\"last-name\":\"Theedom\"},\"title\":\"Fun with JSON binding\"}";
+        String expectedJson = "{\"alternativetitle\":\"Fun with JSON-B\",\"author-name\":{\"first-name\":\"Alex\",\"last-name\":\"Theedom\"},\"title\":\"Fun with JSON binding\"}";
         JsonbConfig jsonbConfig = new JsonbConfig()
                 .withPropertyNamingStrategy(PropertyNamingStrategy.LOWER_CASE_WITH_DASHES);
 
         Magazine magazine = JsonbBuilder.create(jsonbConfig).fromJson(expectedJson, Magazine.class);
 
-        assertThat(magazine.getAlternativetitle()).isEqualTo("01846537");
+        assertThat(magazine.getAlternativetitle()).isEqualTo("Fun with JSON-B");
         assertThat(magazine.getAuthorName().getFirstName()).isEqualTo("Alex");
         assertThat(magazine.getAuthorName().getLastName()).isEqualTo("Theedom");
         assertThat(magazine.getTitle()).isEqualTo("Fun with JSON binding");
@@ -99,7 +99,7 @@ public class CustomisePropertyNamingStrategyTest {
     public void givenLOWER_CASE_WITH_UNDERSCORESStrategy_shouldDelimitLowercasePropertyNameWithUnderscore() {
         /*
             {
-              "alternativetitle": "01846537",
+              "alternativetitle": "Fun with JSON-B",
               "author_name": {
                 "first_name": "Alex",
                 "last_name": "Theedom"
@@ -108,7 +108,7 @@ public class CustomisePropertyNamingStrategyTest {
             }
          */
 
-        String expectedJson = "{\"alternativetitle\":\"01846537\",\"author_name\":{\"first_name\":\"Alex\",\"last_name\":\"Theedom\"},\"title\":\"Fun with JSON binding\"}";
+        String expectedJson = "{\"alternativetitle\":\"Fun with JSON-B\",\"author_name\":{\"first_name\":\"Alex\",\"last_name\":\"Theedom\"},\"title\":\"Fun with JSON binding\"}";
         JsonbConfig jsonbConfig = new JsonbConfig()
                 .withPropertyNamingStrategy(PropertyNamingStrategy.LOWER_CASE_WITH_UNDERSCORES);
 
@@ -122,7 +122,7 @@ public class CustomisePropertyNamingStrategyTest {
     public void givenUPPER_CAMEL_CASEStrategy_shouldDelimitLowercasePropertyNameWithUnderscore() {
         /*
             {
-              "Alternativetitle": "01846537",
+              "Alternativetitle": "Fun with JSON-B",
               "AuthorName": {
                 "FirstName": "Alex",
                 "LastName": "Theedom"
@@ -131,7 +131,7 @@ public class CustomisePropertyNamingStrategyTest {
             }
          */
 
-        String expectedJson = "{\"Alternativetitle\":\"01846537\",\"AuthorName\":{\"FirstName\":\"Alex\",\"LastName\":\"Theedom\"},\"Title\":\"Fun with JSON binding\"}";
+        String expectedJson = "{\"Alternativetitle\":\"Fun with JSON-B\",\"AuthorName\":{\"FirstName\":\"Alex\",\"LastName\":\"Theedom\"},\"Title\":\"Fun with JSON binding\"}";
         JsonbConfig jsonbConfig = new JsonbConfig()
                 .withPropertyNamingStrategy(PropertyNamingStrategy.UPPER_CAMEL_CASE);
 
@@ -144,7 +144,7 @@ public class CustomisePropertyNamingStrategyTest {
     public void givenUPPER_CAMEL_CASE_WITH_SPACESStrategy_shouldDelimitLowercasePropertyNameWithUnderscore() {
         /*
             {
-              "Alternativetitle": "01846537",
+              "Alternativetitle": "Fun with JSON-B",
               "Author Name": {
                 "First Name": "Alex",
                 "Last Name": "Theedom"
@@ -153,7 +153,7 @@ public class CustomisePropertyNamingStrategyTest {
             }
          */
 
-        String expectedJson = "{\"Alternativetitle\":\"01846537\",\"Author Name\":{\"First Name\":\"Alex\",\"Last Name\":\"Theedom\"},\"Title\":\"Fun with JSON binding\"}";
+        String expectedJson = "{\"Alternativetitle\":\"Fun with JSON-B\",\"Author Name\":{\"First Name\":\"Alex\",\"Last Name\":\"Theedom\"},\"Title\":\"Fun with JSON binding\"}";
         JsonbConfig jsonbConfig = new JsonbConfig()
                 .withPropertyNamingStrategy(PropertyNamingStrategy.UPPER_CAMEL_CASE_WITH_SPACES);
 
@@ -166,7 +166,7 @@ public class CustomisePropertyNamingStrategyTest {
     public void givenCASE_INSENSITIVEStrategy_shouldDelimitLowercasePropertyNameWithUnderscore() {
         /*
             {
-              "alternativetitle": "01846537",
+              "alternativetitle": "Fun with JSON-B",
               "authorName": {
                 "firstName": "Alex",
                 "lastName": "Theedom"
@@ -175,7 +175,7 @@ public class CustomisePropertyNamingStrategyTest {
             }
          */
 
-        String expectedJson = "{\"alternativetitle\":\"01846537\",\"authorName\":{\"firstName\":\"Alex\",\"lastName\":\"Theedom\"},\"title\":\"Fun with JSON binding\"}";
+        String expectedJson = "{\"alternativetitle\":\"Fun with JSON-B\",\"authorName\":{\"firstName\":\"Alex\",\"lastName\":\"Theedom\"},\"title\":\"Fun with JSON binding\"}";
         JsonbConfig jsonbConfig = new JsonbConfig()
                 .withPropertyNamingStrategy(PropertyNamingStrategy.CASE_INSENSITIVE);
 
