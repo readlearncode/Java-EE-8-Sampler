@@ -16,11 +16,6 @@ public class JsonMergePatchExample extends JsonExample {
         JsonValue source = Json.createValue("{\"colour\":\"blue\"}");
         JsonValue patch = Json.createValue("{\"colour\":\"red\"}");
         JsonMergePatch jsonMergePatch = Json.createMergePatch(patch);
-
-
-        Json.createMergePatch(Json.createValue("{\"colour\":\"red\"}")).apply(Json.createValue("{\"colour\":\"red\"}"));
-
-
         return jsonMergePatch.apply(source);
     }
 

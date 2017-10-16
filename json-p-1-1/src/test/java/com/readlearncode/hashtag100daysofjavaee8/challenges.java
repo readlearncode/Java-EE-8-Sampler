@@ -1,10 +1,8 @@
 package com.readlearncode.hashtag100daysofjavaee8;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 import javax.json.*;
-
 import java.io.StringReader;
 
 import static org.assertj.core.api.Java6Assertions.assertThat;
@@ -18,8 +16,7 @@ import static org.assertj.core.api.Java6Assertions.assertThat;
 public class challenges {
 
     @Test
-    @Ignore
-    public void givenTargetJSON_whenPatchIsApplied_shouldChangeResult() {
+    public void givenObservers_shouldCallInPriorityOrder() {
 
         JsonValue target = Json.createValue("{\"colour\":\"blue\",\"size\":10}");
         JsonValue patch = Json.createValue("{\"colour\":\"red\"}");
@@ -32,7 +29,7 @@ public class challenges {
 
 
     @Test
-    public void givenATarget_JSONPointerShouldFindValue() {
+    public void givenATarget_JSONPointerShouldAddAndRemoveElementValue() {
 
         /* Target JSON document
         {
