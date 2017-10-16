@@ -1,6 +1,8 @@
 package com.readlearncode.devWorks.part2.adaptors;
 
 import javax.json.bind.annotation.JsonbTypeAdapter;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -16,6 +18,7 @@ public class Author {
     @JsonbTypeAdapter(FirstNameAdapter.class)
     private String firstName;
 
+    private List<String> list = new ArrayList<>();
 
     public Author() {
     }
@@ -23,6 +26,14 @@ public class Author {
     public Author(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
+    }
+
+    public List<String> getList() {
+        return list;
+    }
+
+    public void setList(List<String> list) {
+        this.list = list;
     }
 
     public String getFirstName() {
