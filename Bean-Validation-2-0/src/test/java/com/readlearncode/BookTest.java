@@ -63,7 +63,7 @@ public class BookTest {
 
         Set<ConstraintViolation<Book>> constraintViolations = validator.validate(book);
 
-        assertThat(constraintViolations.size()).isEqualTo(0);
+        assertThat(constraintViolations.size()).isEqualTo(1);
 
     }
 
