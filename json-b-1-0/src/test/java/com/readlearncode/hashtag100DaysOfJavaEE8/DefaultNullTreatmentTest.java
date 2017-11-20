@@ -36,7 +36,7 @@ public class DefaultNullTreatmentTest {
 
 
 
-		How does JSON Bindings treat nulls and empty Optionals?
+		How does JSON Binding treat nulls and empty Optionals?
 		Given an instance of the Book class, which JSON document
 		is produced?
 
