@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ejb-jar PUBLIC "-//Sun Microsystems, Inc.//DTD Enterprise
+JavaBeans 2.0//EN" "http://java.sun.com/dtd/ejb-jar_2_0.dtd">
+<ejb-jar>
+    <enterprise-beans>
+        <session>
+            <ejb-name>BookShopEJB</ejb-name>
+            <home>com.readlearncode.EJB2.BookShopHomeRemote</home>
+            <remote>com.readlearncode.EJB2.BookShopRemote</remote>
+            <ejb-class>com.readlearncode.EJB2.BookShopBean</ejb-class>
+            <session-type>Stateless</session-type>
+            <transaction-type>Container</transaction-type>
+            <!--<ejb-ref>-->
+                <!--<ejb-ref-name>ejb/BookHomeRemote</ejb-ref-name>-->
+                <!--<ejb-ref-type>Entity</ejb-ref-type>-->
+                <!--<home>com.readlearncode.BookHomeRemote</home>-->
+                <!--<remote>com.readlearncode.BookRemote</remote>-->
+            <!--</ejb-ref>-->
+            <security-identity>
+                <use-caller-identity/>
+            </security-identity>
+        </session>
+    </enterprise-beans>
+    <assembly-descriptor>
+
+    </assembly-descriptor>
+</ejb-jar>
