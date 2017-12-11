@@ -13,8 +13,8 @@ import javax.security.enterprise.authentication.mechanism.http.LoginToContinue;
 @FormAuthenticationMechanismDefinition(
         loginToContinue = @LoginToContinue(
                 loginPage = "/login-servlet",
-                errorPage = "${applicationConfigImmediate.loginPage}",
-                useForwardToLogin = false
+                errorPage = "/login-servlet-fail",
+                useForwardToLoginExpression = "${appConfigs.forward}"
         )
 )
 @ApplicationScoped

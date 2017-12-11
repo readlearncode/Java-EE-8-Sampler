@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServlet;
  */
 @CustomFormAuthenticationMechanismDefinition(
         loginToContinue = @LoginToContinue(
-                loginPage = "/login.jsf"
+                loginPage = "/login.do"
         )
 )
 @WebServlet("/admin")

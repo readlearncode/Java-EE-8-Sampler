@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServlet;
  * @author Alex Theedom www.readlearncode.com
  * @version 1.0
  */
-@BasicAuthenticationMechanismDefinition(realmName = "${'user-realm'}")
+@BasicAuthenticationMechanismDefinition(realmName = "user-realm")
 @WebServlet("/user")
 @DeclareRoles({"admin", "user", "demo"})
 @ServletSecurity(@HttpConstraint(rolesAllowed = "user"))
