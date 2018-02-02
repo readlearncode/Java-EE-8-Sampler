@@ -2,6 +2,7 @@
 package com.readlearncode.httpauthenticationmechanism;
 
 import javax.enterprise.context.RequestScoped;
+import javax.faces.annotation.FacesConfig;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
@@ -14,11 +15,13 @@ import javax.security.enterprise.credential.UsernamePasswordCredential;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import static javax.faces.annotation.FacesConfig.Version.JSF_2_3;
 import static javax.faces.application.FacesMessage.SEVERITY_ERROR;
 import static javax.security.enterprise.AuthenticationStatus.SEND_CONTINUE;
 import static javax.security.enterprise.AuthenticationStatus.SEND_FAILURE;
 import static javax.security.enterprise.authentication.mechanism.http.AuthenticationParameters.withParams;
 
+@FacesConfig(version = JSF_2_3)
 @Named
 @RequestScoped
 public class LoginBean {
