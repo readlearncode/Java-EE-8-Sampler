@@ -1,8 +1,5 @@
-package com.readlearncode;
+package com.readlearncode.constraints.combined;
 
-import com.readlearncode.constraints.Author;
-import com.readlearncode.constraints.Binding;
-import com.readlearncode.constraints.Book;
 import org.junit.BeforeClass;
 import org.junit.Test;
 

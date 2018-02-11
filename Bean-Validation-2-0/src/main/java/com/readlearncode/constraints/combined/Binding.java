@@ -1,4 +1,4 @@
-package com.readlearncode.constraints;
+package com.readlearncode.constraints.combined;
 
 /**
  * Source code github.com/readlearncode
@@ -8,5 +8,5 @@ package com.readlearncode.constraints;
  */
 public enum Binding {
 
-    HARD_BACK, SOFT_BACK;
+    HARD_BACK, SOFT_BACK
 }
