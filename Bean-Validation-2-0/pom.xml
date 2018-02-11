@@ -15,18 +15,19 @@
         <dependency>
             <groupId>org.hibernate.validator</groupId>
             <artifactId>hibernate-validator</artifactId>
-            <version>6.0.2.Final</version>
+            <version>6.0.7.Final</version>
         </dependency>
         <dependency>
             <groupId>org.glassfish</groupId>
             <artifactId>javax.el</artifactId>
-            <version>3.0.1-b08</version>
+            <version>3.0.1-b09</version>
         </dependency>
         <dependency>
             <groupId>org.hibernate.validator</groupId>
             <artifactId>hibernate-validator-cdi</artifactId>
-            <version>6.0.2.Final</version>
+            <version>6.0.7.Final</version>
         </dependency>
+
 
     </dependencies>
 
