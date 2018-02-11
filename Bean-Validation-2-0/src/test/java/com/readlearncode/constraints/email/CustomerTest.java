@@ -1,4 +1,4 @@
-package com.readlearncode.constraints.EmailConstraint;
+package com.readlearncode.constraints.email;
 
 import org.junit.BeforeClass;
 import org.junit.Test;

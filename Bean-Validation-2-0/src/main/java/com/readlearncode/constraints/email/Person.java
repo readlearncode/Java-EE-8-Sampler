@@ -1,4 +1,4 @@
-package com.readlearncode.constraints.EmailConstraint;
+package com.readlearncode.constraints.email;
 
 import javax.validation.constraints.Email;
 
