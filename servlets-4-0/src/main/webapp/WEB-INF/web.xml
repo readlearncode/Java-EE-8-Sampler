@@ -18,13 +18,13 @@
     </security-constraint>
 
     <!--<filter>-->
-        <!--<filter-name>PushCacheFilter</filter-name>-->
-        <!--<filter-class>com.readlearncode.servlet4.pushbuilder.PushCacheFilter</filter-class>-->
+    <!--<filter-name>PushCacheFilter</filter-name>-->
+    <!--<filter-class>com.readlearncode.servlet4.pushbuilder.PushCacheFilter</filter-class>-->
     <!--</filter>-->
 
     <!--<filter-mapping>-->
-        <!--<filter-name>PushCacheFilter</filter-name>-->
-        <!--<url-pattern>/*</url-pattern>-->
+    <!--<filter-name>PushCacheFilter</filter-name>-->
+    <!--<url-pattern>/*</url-pattern>-->
     <!--</filter-mapping>-->
 
     <servlet>
@@ -37,5 +37,6 @@
         <servlet-name>Faces Servlet</servlet-name>
         <url-pattern>*.xhtml</url-pattern>
     </servlet-mapping>
+
 
 </web-app>
